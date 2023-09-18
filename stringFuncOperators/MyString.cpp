@@ -430,3 +430,10 @@ char& MyString::operator [](int index)
 		return str[index];
 	return str[0];
 }
+void MyString :: operator ()(const char*word)
+{
+	if (this->str != nullptr)
+		delete[]str;
+	str = new char[strlen(word) + 1];
+	strcpy_s(str, strlen(word) + 1, word);
+}

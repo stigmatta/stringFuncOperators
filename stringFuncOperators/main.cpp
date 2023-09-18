@@ -132,6 +132,8 @@ int main()
 	MyString c = ++b;
 	b.print();
 	c.print();
+	c("privet");
+	c.print();
 	/*MyString a("warsaw");
 	a.print();
 	MyString b("Kyiv");

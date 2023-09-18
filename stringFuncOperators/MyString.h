@@ -40,4 +40,6 @@ public:
 	bool operator == (MyString& b);
 	bool operator != (MyString& b);
 	char& operator [](int index);
+	void operator ()(const char*word);
+
 };
