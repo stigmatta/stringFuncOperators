@@ -122,6 +122,27 @@ MyString& operator +(int elements, MyString& a)
 	a[i] = '\0';
 	return a;
 }
+ostream& operator<<(ostream& os, const MyString& a)
+{
+	os << a.get_str(); // Используем аксессор, чтобы получить данные
+	return os;
+}
+istream& operator>> (istream& is, MyString& a)
+{
+	char buff[100];
+	is >> buff;
+	char* tmp = new char[strlen(buff) + 1];
+	int len = (strlen(buff) + 1);
+	int i;
+	for (i = 0; i < len; i++)
+	{
+		tmp[i] = buff[i];
+	}
+	tmp[i] = '\0';
+	a.init(tmp);
+	a.set_length(len);
+	return is;
+}
 int main()
 {
 	system("chcp 1251");
@@ -134,6 +155,12 @@ int main()
 	c.print();
 	c("privet");
 	c.print();
+	MyString d;
+	d = a;
+	d.print();
+	cout << d << endl;
+	cin >> d;
+	cout << d << endl;
 	/*MyString a("warsaw");
 	a.print();
 	MyString b("Kyiv");

@@ -27,12 +27,14 @@ public:
 	void myDelChr(char c); // delete any symbol
 	int myStrCmp(MyString& b)const; // string compare 
 	int get_length()const;
+	char* get_str()const;
 	MyString& operator--(); //delete last symbol in string
 	MyString operator--(int); //postfix delete last symbol in string
 	MyString& operator - (char c); // delete any symbol from string
 	MyString& operator +=(MyString& b);//simplified concatenation
 	MyString& operator +=(const char* word);//simplified concat const char
 	MyString& operator -=(char c);
+	MyString& operator = (const MyString& b);
 	bool operator > (MyString& b); //string compare(ascii)
 	bool operator < (MyString& b);
 	bool operator >= (MyString& b);
@@ -41,5 +43,4 @@ public:
 	bool operator != (MyString& b);
 	char& operator [](int index);
 	void operator ()(const char*word);
-
 };

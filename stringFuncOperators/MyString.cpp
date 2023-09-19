@@ -437,3 +437,19 @@ void MyString :: operator ()(const char*word)
 	str = new char[strlen(word) + 1];
 	strcpy_s(str, strlen(word) + 1, word);
 }
+MyString& MyString:: operator = (const MyString& b)
+{
+	if (this != &b)
+	{
+		if (this->str != nullptr)
+			delete[]str;
+		length = b.length + 1;
+		str = new char[length];
+		strcpy_s(str, length, b.str);
+	}
+	return *this;
+}
+char* MyString:: get_str()const
+{
+	return str;
+}
