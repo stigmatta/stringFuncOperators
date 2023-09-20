@@ -147,7 +147,11 @@ int main()
 {
 	system("chcp 1251");
 	MyString a("hello");
-	MyString b = a++;
+	a.print();
+	MyString b = move(a);
+	b.print();
+	a.print();
+	/*MyString b = a++;
 	b.print();
 	a.print();
 	MyString c = ++b;
@@ -160,7 +164,7 @@ int main()
 	d.print();
 	cout << d << endl;
 	cin >> d;
-	cout << d << endl;
+	cout << d << endl;*/
 	/*MyString a("warsaw");
 	a.print();
 	MyString b("Kyiv");

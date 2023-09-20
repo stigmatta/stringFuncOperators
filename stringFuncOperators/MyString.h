@@ -10,6 +10,7 @@ public:
 	MyString(int length);
 	MyString(const char* str);
 	MyString(const MyString& b);
+	MyString(MyString&& obj);
 	~MyString();
 	void init(const char* str);
 	void print()const;
@@ -30,11 +31,13 @@ public:
 	char* get_str()const;
 	MyString& operator--(); //delete last symbol in string
 	MyString operator--(int); //postfix delete last symbol in string
+	
 	MyString& operator - (char c); // delete any symbol from string
 	MyString& operator +=(MyString& b);//simplified concatenation
 	MyString& operator +=(const char* word);//simplified concat const char
 	MyString& operator -=(char c);
 	MyString& operator = (const MyString& b);
+	MyString& operator =(MyString&& obj);
 	bool operator > (MyString& b); //string compare(ascii)
 	bool operator < (MyString& b);
 	bool operator >= (MyString& b);
