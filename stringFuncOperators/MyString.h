@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include <cstring>
+using namespace std;
 class MyString
 {
 private:
@@ -11,6 +14,7 @@ public:
 	MyString(const char* str);
 	MyString(const MyString& b);
 	MyString(MyString&& obj);
+	MyString(initializer_list <char> a);
 	~MyString();
 	void init(const char* str);
 	void print()const;

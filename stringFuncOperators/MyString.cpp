@@ -1,5 +1,6 @@
 #include "MyString.h"
 #include <iostream>
+#include <cstring>
 using namespace std;
 MyString::MyString()
 {
@@ -22,6 +23,17 @@ MyString::MyString(const char* str)
 	this->length = strlen(str) + 1;
 	this->str = new char[length];
 	strcpy_s(this->str, strlen(str) + 1, str);
+}
+MyString::MyString(initializer_list <char> a)
+{
+	length = a.size();
+	str = new char[length+1];
+	int i = 0;
+	for (auto x = a.begin(); x != a.end(); x++)
+	{
+		str[i++] = *x;
+	}
+	str[length] = '\0';
 }
 MyString::MyString(const MyString& b)
 {

@@ -150,7 +150,8 @@ int main()
 	a.print();
 	MyString b = move(a);
 	b.print();
-	a.print();
+	MyString c{ 'H','e','l','l','o' };
+	c.print();
 	/*MyString b = a++;
 	b.print();
 	a.print();
